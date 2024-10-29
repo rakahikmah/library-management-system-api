@@ -1,68 +1,129 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# Library Management System
 
-## About Laravel
+This project is a library management system that provides a RESTful API to manage books and authors. It allows users to perform various operations such as creating, reading, updating, and deleting (CRUD) records for both books and authors. The API is designed to be simple, structured, and easy to integrate with frontend applications or other services.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Features  
+- **CRUD operations** for books and authors.  
+- Each book can be linked with one or more authors.  
+- Retrieve lists of books and authors with filtering options.  
+- Endpoints for fetching detailed information about a specific book or author.  
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Tech Stack
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+**Programming Language:** PHP 8.2, Laravel 11x
 
-## Laravel Sponsors
+**Database:** MySQL
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+**Web Server Development :** Laragon
 
-### Premium Partners
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+## Installation
 
-## Contributing
+1. clone or download form github
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+2. Import database sql in folder **./dumpmysql**, create schema with name 'altech-omega-andalan' and 'altech-omega-andalan-test' with 2 schema and you can import to MySQL  
 
-## Code of Conduct
+3. And you can config in file .env and .env.testing you can setting with your environment like example
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+**.env**
+```bash
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=altech-omega-andalan
+    DB_USERNAME=root
+    DB_PASSWORD=
+```
 
-## Security Vulnerabilities
+**.env-testing** 
+```bash
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=altech-omega-andalan-test
+    DB_USERNAME=root
+    DB_PASSWORD=
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+4. Run composer install
+```bash
+composer install
+```
 
-## License
+5. Generate the application key
+```bash
+php artisan key:generate
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+6. Migrate Database (Optional if you haven't not import sql to mysql)
+```bash
+php artisan migrate
+```
 
-<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+7. Running Application
+```bash
+php artisan migrate
+```
+
+8. For run URL API with tools in case i use postman an you can import my collention the name file collection is **./Test-Altech-Omega-Andalan.postman_collection**
+
+9. This project utilizes Laravel's built-in **DB Seeder** to generate fake data for testing purposes. You can run the following command to populate the database with sample data:
+```bash
+php artisan db:seed
+```
+
+10 In This case for Unit Testing I use PHPUnit you can run unit testing with command 
+```bash
+php artisan test
+```
+
+# Library Management System API - Authors
+
+## Authors Endpoints
+
+| **Method** | **Endpoint**                            | **Description**                 | **Request Body Fields**                                                                                      |
+|------------|------------------------------------------|---------------------------------|--------------------------------------------------------------------------------------------------------------|
+| GET        | `http://localhost:8000/api/authors`      | Retrieve all authors            | Not required                                                                                                 |
+| GET        | `http://localhost:8000/api/authors/{id}` | Retrieve a specific author      | Not required                                                                                                 |
+| GET        | `http://localhost:8000/api/authors/{id}/books` | Retrieve all books by the author | Not required                                                                                                 |
+| POST       | `http://localhost:8000/api/authors`      | Create a new author             | - **name** (required) <br> - **bio** (optional) <br> - **birth_date** (date, required)       |
+| PUT        | `http://localhost:8000/api/authors/{id}` | Update an existing author       | - **name** (optional) <br> - **bio** (optional) <br> - **birth_date** (date, optional)       |
+| DELETE     | `http://localhost:8000/api/authors/{id}` | Delete an author                | Not required                                                                                                 |
+
+---
+
+# Library Management System API - Books
+
+## Books Endpoints
+
+| **Method** | **Endpoint**                         | **Description**                | **Request Body Fields**                                                                                      |
+|------------|--------------------------------------|--------------------------------|--------------------------------------------------------------------------------------------------------------|
+| GET        | `http://localhost:8000/api/books`     | Retrieve all books             | Not required                                                                                                 |
+| GET        | `http://localhost:8000/api/books/{id}`| Retrieve a specific book       | Not required                                                                                                 |
+| POST       | `http://localhost:8000/api/books`     | Create a new book              | - **title** (string, required) <br> - **description** (string, required) <br> - **publish_date** (date, required) <br> - **author_id** (integer, required) |
+| PUT        | `http://localhost:8000/api/books/{id}`| Update an existing book        | - **title** (string , required) <br> - **description** (string , required) <br> - **publish_date** (date) <br> - **author_id** (integer, required) |
+| DELETE     | `http://localhost:8000/api/books/{id}`| Delete a book                  | Not required                                                                                                 |
+
+
+
+## Best Practices Implementation  
+
+In this project, several **Laravel best practices** are implemented, both in terms of code structure and design patterns, including:  
+
+1. **Repository Pattern**  
+   The repository pattern is used to separate the business logic from the data access logic. In this project, the repository pattern is applied to the **Book** and **Author** models, ensuring that data access logic is isolated and reusable, which makes the code cleaner and easier to maintain.  
+
+2. **Form Request**  
+   Laravel's **Form Request** is used to handle validation logic when storing data. This ensures that the validation rules are kept separate from the controller, making the code more organized and reusable, while also improving readability and maintainability.  
+
+3. **Cache for Show Data**  
+   Caching is used to optimize the process of displaying detailed information for books, authors, and their associations. By storing frequently accessed data in cache, the system reduces database queries and improves performance.  
+
+4. **ORM and Eager Loading**  
+   This project utilizes **Eloquent ORM** and **eager loading** to efficiently manage relationships between models. Eager loading ensures that related data is loaded in fewer queries, improving performance by preventing the N+1 query problem.  
+
