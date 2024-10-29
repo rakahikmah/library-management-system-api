@@ -70,9 +70,9 @@ php artisan migrate
 php artisan migrate
 ```
 
-8. For run URL API with tools in case i use postman an you can import my collention the name file collection is **./Test-Altech-Omega-Andalan.postman_collection**
+8. For run URL API with tools in case i use postman an you can import my collection the name file collection is **./Test-Altech-Omega-Andalan.postman_collection**
 
-9. This project utilizes Laravel's built-in **DB Seeder** to generate fake data for testing purposes. You can run the following command to populate the database with sample data:
+9. This project utilizes Laravel built-in **DB Seeder** to generate fake data for testing purposes. You can run the following command to populate the database with sample data:
 ```bash
 php artisan db:seed
 ```
@@ -119,7 +119,7 @@ In this project, several **Laravel best practices** are implemented, both in ter
    The repository pattern is used to separate the business logic from the data access logic. In this project, the repository pattern is applied to the **Book** and **Author** models, ensuring that data access logic is isolated and reusable, which makes the code cleaner and easier to maintain.  
 
 2. **Form Request**  
-   Laravel's **Form Request** is used to handle validation logic when storing data. This ensures that the validation rules are kept separate from the controller, making the code more organized and reusable, while also improving readability and maintainability.  
+   Laravel **Form Request** is used to handle validation logic when storing data. This ensures that the validation rules are kept separate from the controller, making the code more organized and reusable, while also improving readability and maintainability.  
 
 3. **Cache for Show Data**  
    Caching is used to optimize the process of displaying detailed information for books, authors, and their associations. By storing frequently accessed data in cache, the system reduces database queries and improves performance.  
