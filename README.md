@@ -24,7 +24,7 @@ This project is a library management system that provides a RESTful API to manag
 
 ## Installation
 
-1. clone or download form github
+1. clone or download from github
 
 2. Import database sql in folder **./dumpmysql**, create schema with name 'altech-omega-andalan' and 'altech-omega-andalan-test' with 2 schema and you can import to MySQL  
 
