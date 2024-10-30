@@ -91,8 +91,8 @@ php artisan test
 | GET        | `http://localhost:8000/api/authors`      | Retrieve all authors            | Not required                                                                                                 |
 | GET        | `http://localhost:8000/api/authors/{id}` | Retrieve a specific author      | Not required                                                                                                 |
 | GET        | `http://localhost:8000/api/authors/{id}/books` | Retrieve all books by the author | Not required                                                                                                 |
-| POST       | `http://localhost:8000/api/authors`      | Create a new author             | - **name** (required) <br> - **bio** (optional) <br> - **birth_date** (date, required)       |
-| PUT        | `http://localhost:8000/api/authors/{id}` | Update an existing author       | - **name** (optional) <br> - **bio** (optional) <br> - **birth_date** (date, optional)       |
+| POST       | `http://localhost:8000/api/authors`      | Create a new author             | - **name** (required) <br> - **bio** (required) <br> - **birth_date** (date, required)       |
+| PUT        | `http://localhost:8000/api/authors/{id}` | Update an existing author       | - **name** (required) <br> - **bio** (required)  <br> - **birth_date** (date, required)       |
 | DELETE     | `http://localhost:8000/api/authors/{id}` | Delete an author                | Not required                                                                                                 |
 
 ---
