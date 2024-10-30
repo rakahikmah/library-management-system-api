@@ -67,7 +67,7 @@ php artisan migrate
 
 7. Running Application
 ```bash
-php artisan migrate
+php artisan serve
 ```
 
 8. For run URL API with tools in case i use postman an you can import my collection the name file collection is **./Test-Altech-Omega-Andalan.postman_collection**
